@@ -1,14 +1,51 @@
-<!--Write a context-->
+<!--定位模式-->
+
 <!DOCTYPE html>
 <html>
+    <!--絕對定位會獨立於所有的定位模式之外-->
+    <!--相對定位是以原始的位置當作基準點作位移
+        即便位移了仍算元件也在內，因此這個比較適用於位移量不大的時候
+    -->
     <head>
         <meta charset="UTF-8"></meta>
         <title>CSS learning</title>
+        <style type:"text/css">
+        
+        .box{
+            width:100px;
+            height:150px;
+            background-color: silver;
+            position:absolute; 
+            left:200px;
+            top:50px;
+        }
+        .box2{
+            width:100px;
+            height:150px;
+            background-color:chartreuse;
+            position:relative; 
+            left:200px;
+            top:50px;
+        }
+        .div_line{
+            width:400px ;
+            border-top:5px solid;
+            border-color:blue; 
+            margin-bottom:20px;
+        }
+        .pow_sign{
+            font-size: 5px;
+            color:red;
+            position:relative;
+            top:-8px;
+        }
+        </style>
     </head>
     <body>
         <!--速記：div,沿用單字divid將網頁呈現切割成多個區塊，所以一個div及為一個區塊-->
         <!--一個div就是一個區塊-->
         <div style="font-weight:bold; font-size: 50px;"><!--css code-->
+            
             <!-- struct of css_code -->
             <!-- css_code : default value ; another css_code: default -->
             今天天氣不錯
@@ -44,7 +81,10 @@
                     <br/>
                     hello world
             </div>
-            
+            <div class="div_line"></div>
+            <div class="box"></div>
+            哈哈<span class="pow_sign">2</span>,你真的很幽默欸
+            <div class="box2"></div>
             <!-- <span style="color:aquamarine;font-size: 25px;">world</span>
             <div style="padding:15px; border:1px solid;margin-top:10px;margin-bottom:10px"></div> -->
             <!-- <div style="border:1px dashed;margin-top:10px;margin-bottom:10px"></div> -->
