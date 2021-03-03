@@ -1,0 +1,33 @@
+<!--
+    TO-DO:為頁面元素綁定事件
+-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script><!--允許Vue.js-->
+ 
+    </head>
+    <body>
+        <div id="myApp">
+            <p>你喜歡的遊戲是:{{mygame}}</p>
+            <button v-on:click="btnClick('我的世界')">我的世界</button>
+            <button v-on:click="btnClick('魔獸世界')">魔獸世界</button>
+            <button @click="btnClick('節奏戰士')">節奏戰士</button>
+
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:'#myApp',
+                data:{
+                    mygame:"Default"
+                },
+                methods:{
+                    btnClick: function(pname){
+                        this.mygame=pname;
+                    }
+                }
+            });
+            
+        </script>
+
+    </body>
+</html>

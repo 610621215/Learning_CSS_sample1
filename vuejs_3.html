@@ -1,0 +1,31 @@
+<!--
+    to-do:v-model
+    TO-DO:為輸入框進行數據綁定
+    vue.js: 組件
+    Goal:文本框會隨著mygame的模型改變而改變
+-->
+
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    
+    <body>
+        <div id="myApp">
+            <h2>預購的遊戲:{{mygame}}</h2><!-- 綁定數據模型-->
+            <input v-model="mygame">
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp",
+                data:{
+                    mygame:"貪婪之島"
+
+                }
+
+            });
+
+        </script>
+    </body>
+
+</html> 

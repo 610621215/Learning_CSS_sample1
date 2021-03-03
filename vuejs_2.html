@@ -1,0 +1,41 @@
+<!--
+    to-do:show list
+    日後將修改數據從數據庫中取得
+
+-->
+<html>
+    <head>
+            <meta charset="utf-8">
+            <script src="https://unpkg.com/vue/dist/vue.js"></script><!--允許Vue.js-->
+            <link href="../css/style.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <div id="myApp">
+            <h3>Game Title</h3>
+            <div v-if="seen">2017年發售</div>
+
+            <ol>
+                <li v-for="game in games"> <!-- 同 foreach的寫法,game為單位元素-->
+                    {{game.title}} / {{game.price}}
+                </li>
+            </ol>
+
+         
+        </div>
+    <script>
+        var myApp=new Vue({
+            el: '#myApp',
+            data:{
+                seen:true,
+                games:[
+                    {title:"game_1",price:"200"},
+                    {title:"game_2",price:"350"},
+                    {title:"game_3",price:"450"},
+                ]
+            }
+        });
+    </script>    
+    </body>
+
+</html>

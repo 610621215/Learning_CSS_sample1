@@ -1,0 +1,41 @@
+<!--
+    TO-DO:組件
+    定義頁面的局部區域塊(by div)的小功能
+    使得頁面能切分成多個區塊
+
+-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myApp">
+            <ol> <!--order list-->   
+                <!-- li 是o的列表，而列表不代表有序-->
+                <game-item v-for="item in games" v-bind:game="item">
+
+                </game-item>
+            </ol>
+        </div>
+        <script>
+            //組件定義
+            //網頁著色時
+            Vue.component('game-item',{
+                props: ['game'],
+                template: '<li>{{ game.title }}</li>' //顯示模板
+            });
+
+            var myApp=new Vue({
+                el:"#myApp",
+                data: {
+                    games:[
+                        { title : 'game_1' },
+                        { title : 'game_2' },
+                        { title : 'game_3' }
+                    ]
+                }
+            });
+
+        </script>
+    </body>
+</html>

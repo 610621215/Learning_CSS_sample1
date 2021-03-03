@@ -1,0 +1,36 @@
+<!--觀察屬性-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myAPP">
+                <p>原價:{{ old_price }},加價後 {{ price }},{{ priceInTax }},{{ price_ }}</p>
+                <button @click="btnClick(10000)">加价10000円</button>
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp"
+                ,
+                data:{
+                    old_price:29980,
+                    price:29980,
+                    priceInTax:0,
+                    price_:0
+                }
+                ,watch:{
+                    price: function(numV,oldV){
+                        console.log(numV,oldV);
+                        this.price_=Math.round(this.price*1.08);
+                        this.priceInTax=Math.round(this.price_/16.75);
+                    }
+                }
+                ,methods:{
+                        btnClick:function(newPrice){
+                            this.price += newPrice
+                        }
+                }
+            });
+        </script>
+    </body>
+</html>

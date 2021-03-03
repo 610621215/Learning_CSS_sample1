@@ -1,0 +1,40 @@
+<!--
+    過濾器
+    filters
+    :
+    格式化變量內容的輸出(日期格式 字母大小寫 數字再計算等....)
+    ^意思是讓資料庫不需要存太多筆相同資料而不同表示的內容
+    不免造成數據冗於
+-->
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myAPP">
+            <p>{{message|toupper}} </p>
+            <hr>
+            <p>{{num|topercentage}} </p>
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp",
+                data: {
+                    message: 'halo',
+                    num:0.3
+                },
+                filters:{
+                    toupper: function(value){
+                        return value.toUpperCase();
+                    },
+                    topercentage: function(value){
+                        return value*100+'%';
+                    }
+                }
+            });
+
+        </script>
+    </body>
+</html>

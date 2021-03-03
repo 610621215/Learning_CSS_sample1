@@ -1,0 +1,29 @@
+<!--計算屬性-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    </head>
+    <body>
+        <div id="myAPP">
+            價格是{{price}}經過匯率計算後的價格是{{price_}}含稅價格{{priceInText}}
+
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp",
+                data:{
+                    price:290007
+                },
+                computed:{
+                    priceInText:function(){
+                        return this.price*1.089
+                    },
+                    price_:function(){
+                        return Math.round(this.priceInText/16.75);
+                    }
+                }
+            });
+        </script>
+        
+    </body>
+</html>

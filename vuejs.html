@@ -1,0 +1,34 @@
+<html>
+
+    <head>
+            <meta charset="utf-8">
+            <script src="https://unpkg.com/vue/dist/vue.js"></script>
+            <link href="../css/style.css" rel="stylesheet">
+    </head>
+    <body>
+        
+        <div id="myApp">
+            {{message}}
+        </div>
+        <div id="halo">
+            {{name}}
+        </div>
+        <script>
+            var myapp=new Vue({
+                el:'#myApp',//id代碼塊之使用,選擇器
+                data:{
+                    message: 'halo vue.js'
+                }
+            });
+            var hisname=new Vue({
+                el:'#halo',//id代碼塊之使用,選擇器
+                data:{
+                    name: 'halo Vue'
+                }
+            });
+
+        </script>
+        
+    </body>
+
+</html>
