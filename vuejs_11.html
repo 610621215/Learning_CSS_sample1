@@ -1,0 +1,34 @@
+<!--元素顯示器-->
+<!--html是否渲染-->
+<!--v-if僅渲染一行-->
+<!--v-show無論如何都會在html dom-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link href="style.css" rel="stylesheet"><!--import css style-->
+        <!-- html and css have same directory-->
+       
+    </head>
+    <body>
+        <div id="myApp">
+            <h1 v-show="result">測試</h1>
+            <button @click="btnc">顯示</button>
+
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp",
+                data:{
+                    result:false
+                },
+                methods:{
+                    btnc:function(){
+                        this.result=!this.result;
+                    }
+                }
+
+            });
+        </script>
+    </body>
+
+</html>

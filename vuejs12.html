@@ -1,0 +1,30 @@
+<!--list render-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link href="style.css" rel="stylesheet"><!--import css style-->
+        <!-- html and css have same directory-->
+        
+       
+    </head>
+    <body>
+        <div id="myApp">
+            <ol>
+            <li v-for=" (item,index) in result">{{index+1}},{{item.title}},{{item.price}}</li>
+            </ol>
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp",
+                data:{
+                    result:[
+                        {title:"商品1",price:"23"},
+                        {title:"商品2",price:"24"},
+                        {title:"商品3",price:"25"}
+                    ]
+                }
+            });
+        </script>
+    </body>
+
+</html>
