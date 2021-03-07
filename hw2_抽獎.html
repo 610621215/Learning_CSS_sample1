@@ -1,0 +1,43 @@
+<!--條件渲染-->
+<!--v-if-->
+<!--v-elseif-->
+<!--抽獎網頁-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link href="style.css" rel="stylesheet"><!--import css style-->
+        <!-- html and css have same directory-->
+       
+    </head>
+
+    <body>
+        <div class="title">Title</div>
+        <div class="line"></div>
+        <div id="myApp">
+            <div>您的得分:{{score}}</div>
+            <span v-if="btnisclick==false">點擊按鈕後開始抽獎</span>
+            <span v-else>評語:</span>
+            <span v-if="score!=0&&score<60"> 完全不行阿兄弟</span>
+            <span v-else-if="score!=0&&score>=60">玩得不錯喔</span>
+            <br>
+            <button @click="btnClick">您的結果</button>
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp"
+                ,data:{
+                    score:0,
+                    btnisclick:false
+                }
+                ,methods:{
+                    btnClick:function(){
+                        this.btnisclick=true;
+                        this.score=Math.round(Math.random()*100);
+                            // this.isactive=!this.isactive;
+                    }
+                }
+
+            });
+        </script>      
+    </body>
+</html>

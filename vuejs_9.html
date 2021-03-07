@@ -1,0 +1,32 @@
+<!--class綁定-->
+<html>
+    <head>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+        <link href="style.css" rel="stylesheet"><!--import css style-->
+        <!-- html and css have same directory-->
+       
+    </head>
+
+    <body>
+        <div class="active">who am i</div>
+        <div id="myApp">
+                <div v-bind:class="{active:isactive}">red context</div>
+                <button @click="btnClick">submit one</button>
+  
+        </div>
+        <script>
+            var myApp=new Vue({
+                el:"#myApp"
+                ,data:{
+                    isactive:true
+                }
+                ,methods:{
+                    btnClick:function(){
+                            this.isactive=!this.isactive;
+                    }
+                }
+
+            });
+        </script>      
+    </body>
+</html>
